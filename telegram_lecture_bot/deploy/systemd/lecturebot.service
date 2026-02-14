@@ -1,0 +1,23 @@
+[Unit]
+Description=Telegram Lecture Translator Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lecturebot
+WorkingDirectory=/opt/lecturebot
+EnvironmentFile=/opt/lecturebot/deploy/systemd/lecturebot.env
+ExecStart=/opt/lecturebot/.venv/bin/python -m bot
+Restart=always
+RestartSec=3
+# Security hardening (nice-to-have)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/lecturebot/data
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

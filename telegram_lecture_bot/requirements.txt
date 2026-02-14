@@ -1,0 +1,7 @@
+python-telegram-bot==21.11
+openai>=1.40.0
+python-dotenv>=1.0.1
+pydub>=0.25.1
+langdetect>=1.0.9
+pdfplumber>=0.11.4
+python-docx>=1.1.2
